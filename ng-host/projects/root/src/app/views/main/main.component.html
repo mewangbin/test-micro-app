@@ -1,0 +1,18 @@
+<div fxFill fxLayout="row">
+  <div fxFlex="200px" class="aside">
+    <ul>
+      <li>
+        <button (click)="gotoURL('/one')">ng-client one</button>
+      </li>
+      <li>
+        <button (click)="gotoURL('/two')">ng-client two</button>
+      </li>
+    </ul>
+  </div>
+  <div fxFlex class="content">
+    <input [(ngModel)]="message" />
+    <button (click)="handleSend()">发送数据</button>
+    <hr />
+    <micro-app-ng-host [attr.name]="name" [attr.url]="url" baseroute="/main"></micro-app-ng-host>
+  </div>
+</div>

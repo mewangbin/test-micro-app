@@ -1,0 +1,18 @@
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+import microApp from '@micro-zoe/micro-app';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+microApp.start({
+  tagName: 'micro-app-ng-host',
+});
+
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.error(err));
